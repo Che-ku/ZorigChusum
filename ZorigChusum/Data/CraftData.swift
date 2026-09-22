@@ -6,30 +6,35 @@ enum CraftData {
             name: "Shingzo",
             englishName: "Carpentry",
             imageName: "hammer.fill",
+            photoName: "shingzo",
             description: "Shingzo is the traditional art of carpentry. Skilled carpenters construct dzongs, temples, houses, bridges, doors, windows and richly detailed timber structures, often without using nails."
         ),
         Craft(
             name: "Dozo",
             englishName: "Masonry",
             imageName: "building.columns.fill",
+            photoName: "dozo",
             description: "Dozo is the craft of building with stone. Bhutanese masons create strong walls, houses, monasteries, dzongs and chortens by carefully selecting, shaping and arranging stone."
         ),
         Craft(
             name: "Parzo",
             englishName: "Carving",
             imageName: "square.and.pencil",
+            photoName: "parzo",
             description: "Parzo is the art of carving designs into wood, stone and slate. It is used for religious images, printing blocks, masks, decorative panels and architectural details."
         ),
         Craft(
             name: "Lhazo",
             englishName: "Painting",
             imageName: "paintpalette.fill",
+            photoName: "lhazo",
             description: "Lhazo is traditional Bhutanese painting. Artists paint thangkas, murals, religious figures and symbolic motifs using carefully prepared colours and established artistic rules."
         ),
         Craft(
             name: "Jinzo",
             englishName: "Sculpting",
             imageName: "person.crop.square.filled.and.at.rectangle",
+            photoName: "jinzo",
             description: "Jinzo is the art of creating statues and ritual objects from clay and other materials. Sculptors commonly produce sacred images for temples, monasteries and household altars."
         ),
         Craft(
@@ -82,4 +87,3 @@ enum CraftData {
         )
     ]
 }
-

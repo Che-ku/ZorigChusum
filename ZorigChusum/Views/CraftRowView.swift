@@ -5,12 +5,25 @@ struct CraftRowView: View {
 
     var body: some View {
         HStack(spacing: 16) {
-            Image(systemName: craft.imageName)
-                .font(.title2)
-                .foregroundStyle(.white)
-                .frame(width: 48, height: 48)
-                .background(Color.bhutanOrange.gradient)
-                .clipShape(RoundedRectangle(cornerRadius: 12))
+            Group {
+                if let photoName = craft.photoName {
+                    Image(photoName)
+                        .resizable()
+                        .scaledToFill()
+                } else {
+                    Image(systemName: craft.imageName)
+                        .font(.title2)
+                        .foregroundStyle(.white)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(Color.bhutanOrange.gradient)
+                }
+            }
+            .frame(width: 58, height: 52)
+            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .overlay {
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(Color.bhutanGold.opacity(0.55), lineWidth: 1)
+            }
 
             VStack(alignment: .leading, spacing: 4) {
                 Text(craft.name)
@@ -35,4 +48,3 @@ struct CraftRowView: View {
         CraftRowView(craft: CraftData.all[0])
     }
 }
-

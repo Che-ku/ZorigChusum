@@ -7,17 +7,36 @@ struct CraftDetailView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
-                Image(systemName: craft.imageName)
-                    .resizable()
-                    .scaledToFit()
-                    .symbolRenderingMode(.hierarchical)
-                    .foregroundStyle(Color.bhutanOrange)
-                    .padding(44)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 260)
-                    .background(Color.bhutanGold.opacity(0.22).gradient)
-                    .clipShape(RoundedRectangle(cornerRadius: 24))
-                    .accessibilityHidden(true)
+                Group {
+                    if let photoName = craft.photoName {
+                        Image(photoName)
+                            .resizable()
+                            .scaledToFill()
+                    } else {
+                        Image(systemName: craft.imageName)
+                            .resizable()
+                            .scaledToFit()
+                            .symbolRenderingMode(.hierarchical)
+                            .foregroundStyle(Color.bhutanOrange)
+                            .padding(44)
+                            .background(Color.bhutanGold.opacity(0.22).gradient)
+                    }
+                }
+                .frame(maxWidth: .infinity)
+                .frame(height: 260)
+                .clipShape(RoundedRectangle(cornerRadius: 24))
+                .overlay(alignment: .bottomLeading) {
+                    if craft.photoName != nil {
+                        Text(craft.englishName)
+                            .font(.headline)
+                            .foregroundStyle(.white)
+                            .padding(.horizontal, 14)
+                            .padding(.vertical, 8)
+                            .background(.black.opacity(0.62), in: Capsule())
+                            .padding(14)
+                    }
+                }
+                .accessibilityLabel("Photo representing \(craft.englishName)")
 
                 VStack(alignment: .leading, spacing: 8) {
                     Text(craft.name)
@@ -65,4 +84,3 @@ struct CraftDetailView: View {
         CraftDetailView(craft: CraftData.all[9])
     }
 }
-
