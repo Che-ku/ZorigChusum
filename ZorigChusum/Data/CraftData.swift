@@ -41,48 +41,56 @@ enum CraftData {
             name: "Lugzo",
             englishName: "Bronze-casting",
             imageName: "flame.fill",
+            photoName: "lugzo",
             description: "Lugzo is the traditional casting of bronze and other metals. Craftspeople make statues, bells, ritual vessels, musical instruments and useful household objects."
         ),
         Craft(
             name: "Garzo",
             englishName: "Blacksmithing",
             imageName: "wrench.and.screwdriver.fill",
+            photoName: "garzo",
             description: "Garzo is blacksmithing—the shaping of heated iron into tools and practical objects. Traditional smiths produce knives, swords, farming tools, chains and hardware."
         ),
         Craft(
             name: "Troeko",
             englishName: "Ornament-making",
             imageName: "diamond.fill",
+            photoName: "troeko",
             description: "Troeko is the making of jewellery and ornaments from gold, silver, turquoise, coral and other precious materials. These objects often carry cultural and religious meaning."
         ),
         Craft(
             name: "Tsharzo",
             englishName: "Cane and bamboo work",
             imageName: "basket.fill",
+            photoName: "tsharzo",
             description: "Tsharzo transforms cane and bamboo into strong, lightweight objects such as baskets, mats, containers, fences, bows and household utensils."
         ),
         Craft(
             name: "Thagzo",
             englishName: "Weaving",
             imageName: "rectangle.split.3x3.fill",
+            photoName: "thagzo",
             description: "Thagzo is Bhutan's highly developed textile tradition. Weavers use cotton, wool and silk to create intricate fabrics for kira, gho, bags, belts and ceremonial textiles."
         ),
         Craft(
             name: "Tshemzo",
             englishName: "Tailoring, embroidery & appliqué",
             imageName: "scissors",
+            photoName: "tshemzo",
             description: "Tshemzo includes tailoring, embroidery and appliqué. Artisans stitch clothing and create elaborate religious textiles such as banners and large thongdrel appliqués."
         ),
         Craft(
             name: "Shagzo",
             englishName: "Woodturning",
             imageName: "arrow.triangle.2.circlepath.circle.fill",
+            photoName: "shagzo",
             description: "Shagzo is woodturning on a hand-operated or mechanical lathe. Woodturners shape bowls, cups, plates and containers, often finishing them with natural lacquer."
         ),
         Craft(
             name: "Deh-sho",
             englishName: "Paper-making",
             imageName: "doc.fill",
+            photoName: "deh-sho",
             description: "Deh-sho is traditional handmade paper produced from the bark of Daphne and Edgeworthia plants. The durable paper is used for manuscripts, religious texts, art and gifts."
         )
     ]

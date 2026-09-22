@@ -28,7 +28,7 @@ struct CraftRowView: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(craft.name)
                     .font(.headline)
-                    .foregroundStyle(.primary)
+                    .foregroundStyle(Color.bhutanOrange)
 
                 Text(craft.englishName)
                     .font(.subheadline)

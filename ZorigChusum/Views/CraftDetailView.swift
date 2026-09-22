@@ -5,8 +5,16 @@ struct CraftDetailView: View {
     @State private var isVisited = false
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
+        ZStack {
+            LinearGradient(
+                colors: [Color.bhutanGold.opacity(0.28), Color.bhutanCream, .white],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
+
+            ScrollView {
+                VStack(alignment: .leading, spacing: 24) {
                 Group {
                     if let photoName = craft.photoName {
                         Image(photoName)
@@ -38,44 +46,54 @@ struct CraftDetailView: View {
                 }
                 .accessibilityLabel("Photo representing \(craft.englishName)")
 
-                VStack(alignment: .leading, spacing: 8) {
-                    Text(craft.name)
-                        .font(.largeTitle.bold())
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text(craft.name)
+                            .font(.largeTitle.bold())
 
-                    Text(craft.englishName)
-                        .font(.title3)
-                        .foregroundStyle(Color.bhutanOrange)
-                }
-
-                Divider()
-
-                Text("About this craft")
-                    .font(.headline)
-
-                Text(craft.description)
-                    .font(.body)
-                    .foregroundStyle(.secondary)
-                    .lineSpacing(6)
-
-                Toggle(isOn: $isVisited) {
-                    HStack(spacing: 10) {
-                        Image(systemName: isVisited ? "checkmark.seal.fill" : "checkmark.seal")
-                            .foregroundStyle(isVisited ? .green : .secondary)
-                        Text("I have seen this craft")
-                            .fontWeight(.medium)
+                        Text(craft.englishName)
+                            .font(.title3)
+                            .foregroundStyle(Color.bhutanOrange)
                     }
-                }
-                .tint(Color.bhutanOrange)
-                .padding()
-                .background(Color(.secondarySystemBackground))
-                .clipShape(RoundedRectangle(cornerRadius: 16))
 
-                Spacer(minLength: 12)
+                    Divider()
+                        .overlay(Color.bhutanOrange.opacity(0.55))
+
+                    Text("About this craft")
+                        .font(.headline)
+                        .foregroundStyle(Color.bhutanOrange)
+
+                    Text(craft.description)
+                        .font(.body)
+                        .foregroundStyle(.secondary)
+                        .lineSpacing(6)
+
+                    Toggle(isOn: $isVisited) {
+                        HStack(spacing: 10) {
+                            Image(systemName: isVisited ? "checkmark.seal.fill" : "checkmark.seal")
+                                .foregroundStyle(isVisited ? .green : Color.bhutanOrange)
+                            Text("I have seen this craft")
+                                .fontWeight(.medium)
+                        }
+                    }
+                    .tint(Color.bhutanOrange)
+                    .padding()
+                    .background(Color.bhutanGold.opacity(0.24))
+                    .clipShape(RoundedRectangle(cornerRadius: 16))
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 16)
+                            .stroke(Color.bhutanOrange.opacity(0.25), lineWidth: 1)
+                    }
+
+                    Spacer(minLength: 12)
+                }
+                .padding()
             }
-            .padding()
         }
         .navigationTitle(craft.name)
         .navigationBarTitleDisplayMode(.inline)
+        .toolbarBackground(Color.bhutanOrange, for: .navigationBar)
+        .toolbarBackground(.visible, for: .navigationBar)
+        .toolbarColorScheme(.dark, for: .navigationBar)
     }
 }
 
